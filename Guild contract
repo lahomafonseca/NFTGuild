@@ -1,0 +1,13 @@
+pragma solidity ^0.8.20;
+
+contract Guild {
+    mapping(address => bool) public members;
+
+    function joinGuild() external {
+        members[msg.sender] = true;
+    }
+
+    function isMember(address user) external view returns (bool) {
+        return members[user];
+    }
+}
